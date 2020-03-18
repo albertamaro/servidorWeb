@@ -1,3 +1,1 @@
-# servidorWeb #
-
-Albert Amaro Velasco
+# Albert Amaro Velasco #
