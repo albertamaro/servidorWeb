@@ -14,17 +14,17 @@ class Obj {
         let sql = '',
             taulaProductesExisteix = false,
             taula = null
-    
+
         // Forçem una espera al fer login amb codi, perquè es vegi la càrrega (TODO: esborrar-ho)
-        await utils.promiseWait(1000) 
-        
+        await utils.promiseWait(1000)
+
         // Mira si la taula "productes" existeix
         try {
             taulaProductesExisteix = await db.promiseTableExists('productes')
         } catch (e) {
             console.warn('Avis, funció login: la taula "productes" no existeix')
         }
-    
+
         // Si la taula "productes" no existeix, en crea una i afegeix productes
         if (!taulaProductesExisteix) {
             try {
@@ -38,19 +38,19 @@ class Obj {
                 await db.promiseQuery(sql)
             } catch (e) {
                 console.error(e)
-                return result.json({ resultat: "ko", missatge: "Error, funció llistatProductes: no s'ha pogut crear la taula productes"})  
+                return result.json({ resultat: "ko", missatge: "Error, funció llistatProductes: no s'ha pogut crear la taula productes"})
             }
         }
-    
+
         // Demana la informació de productes
         try {
             sql = 'SELECT * FROM productes'
             taula = await db.promiseQuery(sql)
         } catch (e) {
             console.error(e)
-            return result.json({ resultat: "ko", missatge: "Error, funció llistatProductes: ha fallat la crida a les dades"})  
-        }   
-    
+            return result.json({ resultat: "ko", missatge: "Error, funció llistatProductes: ha fallat la crida a les dades"})
+        }
+
         // Si hem aconseguit dades corectament, tornem la taula resultant
         if (typeof taula === 'object' && typeof taula.length === 'number') {
             result.json({ resultat: "ok", missatge: taula })
@@ -62,4 +62,3 @@ class Obj {
 
 // Export
 module.exports = Obj
-

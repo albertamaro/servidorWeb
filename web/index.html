@@ -13,6 +13,7 @@
         <script src='/web/script-popups.js'></script>
         <script src='/web/script-seccio-backofficeusuaris.js'></script>
         <script src='/web/script-seccio-frontendproductes.js'></script>
+        <script src='/web/script-seccio-frontendhome.js'></script>
         <script src='/web/script-utils.js'></script>
         <script src='/web/script.js'></script>
 
@@ -25,8 +26,80 @@
         <meta name="theme-color" content="#ffffff">
         <link href="/web/appicons/manifest.json" rel="manifest">
     </head>
-    <body onload='inicia()'>
-        <div id='frontendMenuWeb' class='flexRow desktop'>
+    <style>
+    .frontendMenuMobil {
+      position: fixed;
+      height: 100%;
+      width: 0;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      background-color: #003939;
+      overflow-x: hidden;
+      transition: 0.4s;
+      padding: 1rem 0;
+      box-sizing: border-box;
+    }
+    .frontendMenuMobil .boton-cerrar {
+      position: absolute;
+      top: 0.5rem;
+      right: 1rem;
+      font-size: 2rem;
+      display: block;
+      padding: 0;
+      line-height: 1.5rem;
+      margin: 0;
+      height: 32px;
+      width: 32px;
+      text-align: center;
+      vertical-align: top;
+    }
+    .frontendMenuMobil div:hover {
+      background-color: #194c4c;
+      cursor: pointer;
+      color: white;
+    }
+    .botoMenu {
+      color: white;
+    }
+    .frontendMenuWeb {
+      background-color: #003939;
+      justify-content: center;
+      line-height: 40px;
+      color: white;
+    }
+    .frontendMenuWeb div:hover {
+      background-color: #194c4c;
+      cursor: pointer;
+      color: white;
+    }
+    .logo {
+      text-align: center;
+      font-size: 40;
+      line-height: 50px;
+    }
+    .logo:hover {
+      cursor: pointer;
+    }
+    .table th {
+      background-color: #6EB4AE;
+    }
+    .table td:nth-child(odd) {
+      background-color: #B2E3EA;
+    }
+    .table td:nth-child(even) {
+
+    }
+    .frontendPresentacio {
+      display: flex;
+      flex-direction: column;
+    }
+    </style>
+
+
+    <body onload='inicia()' style="background-color: #EEFAF9;">
+      <p class="logo" onclick='navegacio.canviaSeccio("frontendHome")'>Empresa de viatges</p>
+        <div id='frontendMenuWeb' class='flexRow desktop frontendMenuWeb'>
             <div class='botoMenu' onclick='navegacio.canviaSeccio("frontendHome")'>Inici</div>
             <div class='botoMenu' onclick='navegacio.canviaSeccio("frontendPresentacio")'>Presentació</div>
             <div class='botoMenu' onclick='navegacio.canviaSeccio("frontendProductes")'>Productes</div>
@@ -36,7 +109,15 @@
             <div id='botoGestioProductesWeb' class='botoMenu none' onclick='navegacio.canviaSeccio("backofficeProductes")'>Gestió productes</div>
             <div id='botoLogoutWeb' class='botoMenu none' onclick='login.tancaLaSessio()'>Sortir</div>
         </div>
-        <div id='frontendMenuMobil' class='flexColumn mobile'>
+
+        <a id="abrir" class="abrir-cerrar mobile" href="javascript:void(0)" onclick="navegacio.mostrar()">
+          <i class="material-icons menubutton">menu </i>
+        </a>
+
+        <div id='frontendMenuMobil' class='flexColumn mobile frontendMenuMobil'>
+          <a  id="cerrar" href="#" onclick="navegacio.ocultar()">
+            <i class="material-icons menubutton">clear </i>
+          </a>
             <div class='botoMenu' onclick='navegacio.canviaSeccio("frontendHome")'>Inici</div>
             <div class='botoMenu' onclick='navegacio.canviaSeccio("frontendPresentacio")'>Presentació</div>
             <div class='botoMenu' onclick='navegacio.canviaSeccio("frontendProductes")'>Productes</div>
@@ -46,11 +127,49 @@
             <div id='botoGestioProductesMobil' class='botoMenu none' onclick='navegacio.canviaSeccio("backofficeProductes")'>Gestió productes</div>
             <div id='botoLogoutMobil' class='botoMenu none' onclick='login.tancaLaSessio()'>Sortir</div>
         </div>
+
         <div id='frontendHome'>
             Pàgina principal
+            <p>La nostra empresa ofereix els millors preus i ofertes als destins més increíbles tant a nivell nacional, com a nivell internacional.</p>
+            <p>Fes un cop d'ull als nostres viatges, creuers i circuits i emporta't els teus a pasar unes jornades estivals irrepetibles amb la nostra empresa de viatges.</p>
+            <p></p>
+            <div id='productesHome'></div>
         </div>
-        <div id='frontendPresentacio'>
-            Pàgina amb una presentacio de l'empresa
+        <div id='frontendPresentacio' class="frontendPresentacio">
+            <p>La nostra empresa ofereix els millors preus i ofertes als destins més increíbles tant a nivell nacional, com a nivell internacional.</p>
+            <p>Fes un cop d'ull als nostres viatges, creuers i circuits i emporta't els teus a pasar unes jornades estivals irrepetibles amb la nostra empresa de viatges.</p>
+            <p></p>
+
+            <table class="table">
+              <tr>
+                <th>aaa</th>
+                <th>bbb</th>
+                <th>ccc</th>
+                <th>ccc</th>
+                <th>ccc</th>
+                <th>ccc</th>
+                <th>ccc</th>
+              </tr>
+              <tr>
+                <td>ddd</td>
+                <td>eee</td>
+                <td>eee</td>
+                <td>fff</td>
+                <td>ccc</td>
+                <td>ccc</td>
+                <td>ccc</td>
+              </tr>
+              <tr>
+                <td>ddd</td>
+                <td>eee</td>
+                <td>eee</td>
+                <td>fff</td>
+                <td>ccc</td>
+                <td>ccc</td>
+                <td>ccc</td>
+              </tr>
+            </table>
+
         </div>
         <div id='frontendProductes'>
             <div id='productesLoading'>Carregant productes ...</div>
@@ -96,7 +215,7 @@
                     <img id='backofficeUsuarisImg' src='/web/imatges/transparent.png' width='100'/>
                     <input id='backofficeUsuarisArxiu' class="dropFile" accept="image/*" type="file" onchange="seccioBackofficeUsuaris.mostraImatge()" />
                 </div>
-                
+
                 <br/>
                 <input type='button' value='Guarda' onclick='seccioBackofficeUsuaris.guardaDadesUsuariAlServidor()'/>
                 <br/>
@@ -105,5 +224,6 @@
                 <div id='backofficeUsuarisPopupError' class='none'>Error al guardar les dades ...</div>
             </div>
         </div>
+
     </body>
 </html>
