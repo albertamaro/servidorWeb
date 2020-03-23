@@ -13,7 +13,6 @@
         <script src='/web/script-popups.js'></script>
         <script src='/web/script-seccio-backofficeusuaris.js'></script>
         <script src='/web/script-seccio-frontendproductes.js'></script>
-        <script src='/web/script-seccio-frontendhome.js'></script>
         <script src='/web/script-utils.js'></script>
         <script src='/web/script.js'></script>
 
@@ -81,18 +80,36 @@
     .logo:hover {
       cursor: pointer;
     }
+    .table {
+      margin: 50px;
+      margin-top: 0px;
+    }
     .table th {
       background-color: #6EB4AE;
     }
     .table td:nth-child(odd) {
       background-color: #B2E3EA;
+      text-align: center;
     }
     .table td:nth-child(even) {
-
+      text-align: center;
     }
     .frontendPresentacio {
-      display: flex;
       flex-direction: column;
+      margin: 20px;
+    }
+    .prodnom {
+      margin: 10px;
+      font-size: 25;
+      font-family: "Brush Script MT";
+    }
+    .prodimg{
+      margin: 10px;
+    }
+    .proddesc{
+      margin-left: 20px;
+      font-size: 17;
+      font-family: "Brush Script MT";
     }
     </style>
 
@@ -130,10 +147,6 @@
 
         <div id='frontendHome'>
             Pàgina principal
-            <p>La nostra empresa ofereix els millors preus i ofertes als destins més increíbles tant a nivell nacional, com a nivell internacional.</p>
-            <p>Fes un cop d'ull als nostres viatges, creuers i circuits i emporta't els teus a pasar unes jornades estivals irrepetibles amb la nostra empresa de viatges.</p>
-            <p></p>
-            <div id='productesHome'></div>
         </div>
         <div id='frontendPresentacio' class="frontendPresentacio">
             <p>La nostra empresa ofereix els millors preus i ofertes als destins més increíbles tant a nivell nacional, com a nivell internacional.</p>
@@ -142,31 +155,39 @@
 
             <table class="table">
               <tr>
-                <th>aaa</th>
-                <th>bbb</th>
-                <th>ccc</th>
-                <th>ccc</th>
-                <th>ccc</th>
-                <th>ccc</th>
-                <th>ccc</th>
+                <th>Destinacions</th>
+                <th>Preu</th>
+                <th>Temps viatge</th>
+                <th>Duració estancia</th>
+                <th>Imatge</th>
               </tr>
               <tr>
-                <td>ddd</td>
-                <td>eee</td>
-                <td>eee</td>
-                <td>fff</td>
-                <td>ccc</td>
-                <td>ccc</td>
-                <td>ccc</td>
+                <td>Egipte</td>
+                <td>1847€</td>
+                <td>5 hores</td>
+                <td>9 dies</td>
+                <td><img src="/web/imatges/egipte.jpeg" width="200px"></td>
               </tr>
               <tr>
-                <td>ddd</td>
-                <td>eee</td>
-                <td>eee</td>
-                <td>fff</td>
-                <td>ccc</td>
-                <td>ccc</td>
-                <td>ccc</td>
+                <td>Japó</td>
+                <td>3230€</td>
+                <td>15 hores</td>
+                <td>12 dies</td>
+                <td><img src="/web/imatges/japo.jpeg" width="200px"></td>
+              </tr>
+              <tr>
+                <td>Perú</td>
+                <td>2335€</td>
+                <td>19 horas</td>
+                <td>9 dies</td>
+                <td><img src="/web/imatges/peru.jpg" width="200px"></td>
+              </tr>
+              <tr>
+                <td>Uganda</td>
+                <td>5965€</td>
+                <td>14 horas</td>
+                <td>16 dies</td>
+                <td><img src="/web/imatges/uganda.jpg" width="200px"></td>
               </tr>
             </table>
 
