@@ -109,7 +109,17 @@
             <div id='productesContinguts' class='prodss'></div>
         </div>
         <div id='frontendContacte'>
-            Pàgina amb informacio de contacte
+            <form class="formulari" action='/paginaAccio' target='_blank' method='GET'>
+              <div class="mdl-textfield mdl-js-textfield">
+            <p class="formtitulo">Formulari</p>
+            <input class="mdl-textfield__input" type="text" name='nom' placeholder="Nom" pattern="[^0-9]*"><br>
+            <input class="mdl-textfield__input" type="text" name='telefon' placeholder="Telèfon" pattern="[^a-z]*"><br>
+            <input class="mdl-textfield__input" type="text" name='email' placeholder="Correu electronic" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"><br>
+            <input class="mdl-textfield__input" type="text" name='coment' placeholder="Comentaris"><br>
+          </div><br>
+          <input class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" type='submit' value='Enviar'>
+        </form>
+
         </div>
         <div id='backofficeUsuaris'>
             <div id='backofficeUsuarisLoading'>Carregant usuaris ...</div>

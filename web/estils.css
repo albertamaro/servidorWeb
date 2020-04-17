@@ -156,3 +156,10 @@ body > #frontendHome {
   margin-left: auto;
   margin-right: auto;
 }
+.formulari{
+  margin-left: 15px;
+}
+.formtitulo {
+  font-size: 30px;
+  padding-bottom: 15px;
+}
