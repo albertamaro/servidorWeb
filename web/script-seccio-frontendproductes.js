@@ -1,4 +1,3 @@
-
 class ObjSeccioFrontendProductes {
 
     constructor () {
@@ -23,7 +22,7 @@ class ObjSeccioFrontendProductes {
         if (objRebut.resultat === 'ok') {
             for (cntProducte = 0; cntProducte < objRebut.missatge.length; cntProducte = cntProducte + 1) {
                 valor = objRebut.missatge[cntProducte]
-                codiHTML = codiHTML + '<div class="prods">'
+                codiHTML = codiHTML + '<div class="prods" onclick=\'navegacio.canviaSeccio("frontendProducte&' + valor.id + '")\'>'
                 codiHTML = codiHTML + '<div class="prodnom"> <b>' + valor.nom +'</b> </div>'
                 codiHTML = codiHTML + '<img class="prodimg" src="' + valor.imatge + '" width="200" />'
                 codiHTML = codiHTML + '<div class="proddesc">' + valor.descripcio + '</div>'

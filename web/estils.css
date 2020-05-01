@@ -134,6 +134,7 @@ body > #frontendHome {
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
+  cursor: pointer;
 }
 .prodnom {
   margin: 10px;
@@ -170,4 +171,15 @@ body > #frontendHome {
   bottom: 0;
   background-color: #003939;
   color: white;
+}
+.prodnom2 {
+  margin: 10px;
+  margin-bottom: 20px;
+  font-size: 40;
+  font-family: "Brush Script MT";
+}
+.proddesc2{
+  margin-left: 20px;
+  font-size: 25px;
+  font-family: "Brush Script MT";
 }

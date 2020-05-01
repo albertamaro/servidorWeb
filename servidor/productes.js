@@ -30,13 +30,13 @@ class Obj {
             try {
                 sql = 'CREATE TABLE productes (id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, nom VARCHAR(50) NOT NULL, descripcio TEXT, preu INT(6), imatge VARCHAR(255))'
                 await db.promiseQuery(sql)
-                sql = 'INSERT INTO productes (nom, descripcio, preu, imatge) VALUES ("Viatge 1", "Viatge a Egipte.", 1847, "/web/imatges/egipte.jpeg")'
+                sql = 'INSERT INTO productes (nom, descripcio, preu, imatge) VALUES ("Viatg 1", "Viatge a Egipte", 1847, "/web/imatges/egipte.jpeg")'
                 await db.promiseQuery(sql)
-                sql = 'INSERT INTO productes (nom, descripcio, preu, imatge) VALUES ("Viatge 2", "Viatge a Japó.", 3230, "/web/imatges/japo.jpeg")'
+                sql = 'INSERT INTO productes (nom, descripcio, preu, imatge) VALUES ("Viatge 2", "Viatge a Japó", 3230, "/web/imatges/japo.jpeg")'
                 await db.promiseQuery(sql)
-                sql = 'INSERT INTO productes (nom, descripcio, preu, imatge) VALUES ("Viatge 3", "Viatge a Perú.", 2335, "/web/imatges/peru.jpg")'
+                sql = 'INSERT INTO productes (nom, descripcio, preu, imatge) VALUES ("Viatge 3", "Viatge a Perú", 2335, "/web/imatges/peru.jpg")'
                 await db.promiseQuery(sql)
-                sql = 'INSERT INTO productes (nom, descripcio, preu, imatge) VALUES ("Viatge 4", "Viatge a Uganda.", 5965, "/web/imatges/uganda.jpg")'
+                sql = 'INSERT INTO productes (nom, descripcio, preu, imatge) VALUES ("Viatge 4", "Viatge a Uganda", 5965, "/web/imatges/uganda.jpg")'
                 await db.promiseQuery(sql)
             } catch (e) {
                 console.error(e)
@@ -45,12 +45,22 @@ class Obj {
         }
 
         // Demana la informació de productes
-        try {
-            sql = 'SELECT * FROM productes'
-            taula = await db.promiseQuery(sql)
-        } catch (e) {
-            console.error(e)
-            return result.json({ resultat: "ko", missatge: "Error, funció llistatProductes: ha fallat la crida a les dades"})
+        if (data.id) {
+            try {
+                sql = 'SELECT * FROM productes WHERE id=' + data.id
+                taula = await db.promiseQuery(sql)
+            } catch (e) {
+                console.error(e)
+                return result.json({ resultat: "ko", missatge: "Error, funció llistatProductes: ha fallat la crida a les dades"})
+            }
+        } else {
+            try {
+                sql = 'SELECT * FROM productes'
+                taula = await db.promiseQuery(sql)
+            } catch (e) {
+                console.error(e)
+                return result.json({ resultat: "ko", missatge: "Error, funció llistatProductes: ha fallat la crida a les dades"})
+            }
         }
 
         // Si hem aconseguit dades corectament, tornem la taula resultant
