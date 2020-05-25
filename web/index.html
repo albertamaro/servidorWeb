@@ -16,6 +16,7 @@
         <script src='/web/script-seccio-frontendproducte.js'></script>
         <script src='/web/script-utils.js'></script>
         <script src='/web/script.js'></script>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
         <!-- Icones d'aplicació per a navegadors d'escriptori, webapps iOS i webapps Android -->
         <!-- Icones generats amb: https://www.favicon-generator.org/ -->
@@ -58,9 +59,38 @@
             <div id='botoLogoutMobil' class='botoMenu none' onclick='login.tancaLaSessio()'>Sortir</div>
         </div>
 
-        <div id='frontendHome'>
-            Pàgina principal
+
+        <div id='frontendHome' class="frontendHome">
+          <h2 class="w3-center">Aquests són els viatges disponibles a la nostra empresa</h2>
+
+<div class="w3-content w3-display-container">
+<div class="mySlides prodHome" onclick= navegacio.canviaSeccio("frontendProducte&1")>
+  <p style="font-size: 25px;"><b>Viatge a Egipte</b></p>
+<img src="/web/imatges/egipte.jpeg" style="width:100%">
+</div>
+
+<div class="mySlides prodHome" onclick= navegacio.canviaSeccio("frontendProducte&2")>
+  <p style="font-size: 25px;"><b>Viatge a Japó</b></p>
+<img src="/web/imatges/japo.jpeg" style="width:100%">
+</div>
+
+<div class="mySlides prodHome" onclick= navegacio.canviaSeccio("frontendProducte&4")>
+  <p style="font-size: 25px;"><b>Viatge a Uganda</b></p>
+<img src="/web/imatges/uganda.jpg" style="width:100%">
+</div>
+
+<div class="mySlides prodHome" onclick= navegacio.canviaSeccio("frontendProducte&3")>
+  <p style="font-size: 25px;"><b>Viatge a Perú</b></p>
+<img src="/web/imatges/peru.jpg" style="width:100%">
+</div>
+
+
+<button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+<button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+</div>
         </div>
+
+
         <div id='frontendPresentacio' class="frontendPresentacio">
             <p>La nostra empresa ofereix els millors preus i ofertes als destins més increíbles tant a nivell nacional, com a nivell internacional.</p>
             <p>Fes un cop d'ull als nostres viatges, creuers i circuits i emporta't els teus a pasar unes jornades estivals irrepetibles amb la nostra empresa de viatges.</p>

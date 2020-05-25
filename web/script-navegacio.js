@@ -49,4 +49,5 @@ class ObjNavegacio {
         // Executa la funció de càrrega d'aquesta secció si és necessari
         iniciaSeccio(idNova, arr[1])
     }
-}
+    
+    }

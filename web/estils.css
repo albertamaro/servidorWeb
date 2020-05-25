@@ -141,10 +141,10 @@ body > #frontendHome {
   font-size: 25;
   font-family: "Brush Script MT";
 }
-.prodimg{
+.prodimg {
   margin: 10px;
 }
-.proddesc{
+.proddesc {
   margin-left: 20px;
   font-size: 17;
   font-family: "Brush Script MT";
@@ -157,7 +157,7 @@ body > #frontendHome {
   margin-left: auto;
   margin-right: auto;
 }
-.formulari{
+.formulari {
   margin-left: 15px;
 }
 .formtitulo {
@@ -167,6 +167,7 @@ body > #frontendHome {
 .footer {
   position: fixed;
   text-align: center;
+  height: 30px;
   width: 100%;
   bottom: 0;
   background-color: #003939;
@@ -178,8 +179,19 @@ body > #frontendHome {
   font-size: 40;
   font-family: "Brush Script MT";
 }
-.proddesc2{
+.proddesc2 {
   margin-left: 20px;
   font-size: 25px;
   font-family: "Brush Script MT";
+}
+.mySlides {display:none;}
+.frontendHome {
+  flex-direction: column;
+}
+.prodHome {
+  cursor: pointer;
+  border:2px solid black;
+  width: 500;
+  margin: 20px;
+  padding: 20px;
 }
