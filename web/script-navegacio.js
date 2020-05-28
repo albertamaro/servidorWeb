@@ -49,5 +49,14 @@ class ObjNavegacio {
         // Executa la funció de càrrega d'aquesta secció si és necessari
         iniciaSeccio(idNova, arr[1])
     }
-    
+    mostrar() {
+          document.getElementById("frontendMenuMobil").style.width = "150px";
+          document.getElementById("abrir").style.display = "none";
+          document.getElementById("cerrar").style.display = "inline";
+        }
+        ocultar() {
+          document.getElementById("frontendMenuMobil").style.width = "0";
+          document.getElementById("abrir").style.display = "inline";
+          document.getElementById("cerrar").style.display = "none";
+        }
     }
